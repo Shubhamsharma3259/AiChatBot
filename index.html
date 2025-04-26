@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Cart Optimizer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <h1><i class="fas fa-shopping-cart"></i> Smart Cart Optimizer</h1>
+    <div class="country-selector">
+      <label for="country">Select Your Country:</label>
+      <select id="country" onchange="updatePlaceholder()">
+        <option value="IN">India (₹)</option>
+        <option value="US">United States ($)</option>
+        <option value="GB">United Kingdom (£)</option>
+        <option value="EU">European Union (€)</option>
+        <option value="JP">Japan (¥)</option>
+        <option value="AU">Australia (A$)</option>
+        <option value="CA">Canada (C$)</option>
+      </select>
+    </div>
+    <div class="cart">
+      <div class="input-group">
+        <textarea id="cartItems" placeholder="Enter your shopping list here...&#10;Example:&#10;Basmati Rice (1kg) - ₹120&#10;Toor Dal (1kg) - ₹100&#10;Aata (5kg) - ₹250&#10;Milk (1L) - ₹60&#10;Paneer (200g) - ₹80"></textarea>
+        <div class="button-group">
+          <button onclick="optimizeCart()">
+            <i class="fas fa-magic"></i> Optimize Cart
+          </button>
+          <button onclick="clearCart()" class="clear-btn">
+            <i class="fas fa-trash"></i> Clear
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="loading" id="loading">
+      <span>Analyzing your cart...</span>
+    </div>
+    <div class="results">
+      <h2><i class="fas fa-lightbulb"></i> AI Suggestions</h2>
+      <pre id="output"></pre>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
